@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: risklens_postgres
+    environment:
+      POSTGRES_USER: risklens_user
+      POSTGRES_PASSWORD: risklens_password
+      POSTGRES_DB: risklens_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - risklens_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  risklens_postgres_data:
